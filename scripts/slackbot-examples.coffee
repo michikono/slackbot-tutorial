@@ -11,21 +11,12 @@ module.exports = (robot) ->
   get_username = (response) ->
     "@#{response.message.user.name}"
 
-  # helper method to get ID of sender of the message
-  get_user_id = (response) ->
-    response.message.user.id
-
   # helper method to get channel of originating message
   get_channel = (response) ->
     if response.message.room == response.message.user.name
       "@#{response.message.room}"
     else
       "##{response.message.room}"
-
-  # helper method to get ID of channel of the originating message
-  get_channel_id = (response) ->
-    get_channel.slice(1)
-
 
   ###
   # basic example of a fully qualified command
