@@ -5,7 +5,12 @@
 #   uppity? - prints out the count of the number of times somebody said "up"
 #   bug me - secret surprise
 #
-
+# Notes:
+#   https://github.com/github/hubot/blob/master/docs/scripting.md#documenting-scripts
+#
+# Author:
+#   Michi Kono
+#
 module.exports = (robot) ->
   # helper method to get sender of the message
   get_username = (response) ->
@@ -70,6 +75,7 @@ module.exports = (robot) ->
   # This could be used to let bots talk to each other, for example.
   # More on this here: https://github.com/github/hubot/blob/master/docs/scripting.md#http-listener
   ###
+  # robot.router.get should probably be a .post to prevent spiders from making it fire
   robot.router.get '/hubot/my-custom-url/:room', (req, res) ->
     robot.emit "bug-me", {
       room: req.params.room
