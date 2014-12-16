@@ -82,6 +82,8 @@ module.exports = (robot) ->
   robot.router.get '/hubot/my-custom-url/:room', (req, res) ->
     robot.emit "bug-me", {
       room: req.params.room
+      # note the REMOVE THIS PART in this example -- since we are using a GET and the link is being published in the chat room
+      # it can cause an infinite loop since slack itself pre-fetches URLs it sees
       source: "a HTTP call to #{process.env.HEROKU_URL or ''}[/ REMOVE THIS PART ]/hubot/my-custom-url/#{req.params.room} (could be any room name)"
     }
     # reply to the browser
@@ -92,6 +94,7 @@ module.exports = (robot) ->
   # note that if you direct message this command to the bot, you don't need to prefix it with the name of the bot
   ###
   robot.respond /bug me/i, (msg) ->
+    console.log(msg)
     robot.emit "bug-me", {
       room: get_user_id(msg),
       source: 'use of the bug me command'
