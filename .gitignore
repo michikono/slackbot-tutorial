@@ -1,5 +1,4 @@
 node_modules
-bin/
 .DS_Store*
 dump.rdb
 .hubot_history
