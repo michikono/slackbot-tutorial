@@ -86,7 +86,8 @@ module.exports = (robot) ->
   ###
   robot.respond /bug me/i, (msg) ->
     robot.emit "bug-me", {
-      room: get_username(msg),
+      # removing the @ symbol
+      room: get_username(msg).slice(1),
       source: 'use of the bug me command'
     }
 
