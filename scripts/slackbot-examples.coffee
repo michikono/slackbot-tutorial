@@ -94,9 +94,8 @@ module.exports = (robot) ->
   # note that if you direct message this command to the bot, you don't need to prefix it with the name of the bot
   ###
   robot.respond /bug me/i, (msg) ->
-    console.log(msg)
     robot.emit "bug-me", {
-      room: get_user_id(msg),
+      room: get_username(msg),
       source: 'use of the bug me command'
     }
 
