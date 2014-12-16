@@ -82,7 +82,7 @@ module.exports = (robot) ->
   robot.router.get '/hubot/my-custom-url/:room', (req, res) ->
     robot.emit "bug-me", {
       room: req.params.room
-      source: "a HTTP call to #{process.env.HEROKU_URL or ''}/hubot/my-custom-url/#{req.params.room} (could be any room name)"
+      source: "a HTTP call to #{process.env.HEROKU_URL or ''}[/ REMOVE THIS PART ]/hubot/my-custom-url/#{req.params.room} (could be any room name)"
     }
     # reply to the browser
     res.send 'OK'
