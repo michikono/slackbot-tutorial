@@ -75,14 +75,14 @@ module.exports = (robot) ->
 
   ###
   # Example of building an external endpoint (that lives on your heroku app) for others things to trigger your bot to do stuff
-  # More on this here: https://github.com/github/hubot/blob/master/docs/scripting.md#http-listener
+  # To see this in action, visit https://[YOUR BOT NAME].herokuapp.com/hubot/my-custom-url/:room after deploying
   # This could be used to let bots talk to each other, for example.
-  # To enable this, visit https://[YOUR BOT NAME].herokuapp.com/hubot/my-custom-url/:room after deploying
+  # More on this here: https://github.com/github/hubot/blob/master/docs/scripting.md#http-listener
   ###
   robot.router.get '/hubot/my-custom-url/:room', (req, res) ->
     robot.emit "bug-me", {
       room: req.params.room
-      source: 'a HTTP call to /hubot/my-custom-url/:room'
+      source: "a HTTP call to #{process.env.HEROKU_URL or ''}/hubot/my-custom-url/#{req.params.room} (could be any room name)"
     }
     # reply to the browser
     res.send 'OK'
