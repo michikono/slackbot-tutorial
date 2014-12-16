@@ -1,1 +1,1 @@
-web: bin/hubot -a slack -n hubot-tutorial
+web: bin/hubot -a slack -n slackbot-tutorial
