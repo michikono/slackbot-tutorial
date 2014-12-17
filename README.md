@@ -1,4 +1,4 @@
-# Hubot Tutorial Bot
+# Slackbot Tutorial Bot
 
 ### Steps to recreate this bot ###
  
