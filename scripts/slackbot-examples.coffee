@@ -42,7 +42,7 @@ module.exports = (robot) ->
   # \b is a word boundary, and basically putting it on each side of a phrase ensures we are matching against
   # the word "up" instead of a partial text match such as in "sup"
   robot.hear /\bup\b/, (msg) ->
-    # note that this variable is *GLOBAL TO ALL SCRIPTS* to choose a unique name
+    # note that this variable is *GLOBAL TO ALL SCRIPTS* so choose a unique name
     robot.brain.set('everything_uppity_count', (robot.brain.get('everything_uppity_count') || 0) + 1)
 
   # ? is a special character in regex so it needs to be escaped with a \
