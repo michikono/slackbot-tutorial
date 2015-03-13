@@ -113,7 +113,7 @@ module.exports = (robot) ->
   ###
   # responds to all private messages with a mean remark
   robot.hear /./i, (msg) ->
-    # you can chain if states on the end of a statement in coffeescript to make things look cleaner
+    # you can chain if clauses on the end of a statement in coffeescript to make things look cleaner
     # in a direct message, the channel name and author are the same
     msg.send 'shoo!' if get_channel(msg) == get_username(msg)
 
