@@ -47,7 +47,7 @@ module.exports = (robot) ->
 
   # ? is a special character in regex so it needs to be escaped with a \
   # the i on the end means "case *insensitive*"
-  robot.hear /uppity\?/i, (msg) ->
+  robot.hear /are we up\?/i, (msg) ->
     msg.send "Up-ness: " + (robot.brain.get('everything_uppity_count') || "0")
 
   # A script to watch a channel's new members
