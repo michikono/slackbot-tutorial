@@ -4,7 +4,8 @@ This tutorial is geared toward writing a Slack hubot instance. It includes demos
 
 ### Overview
 
-This project contains a more thorough set of example scripts in [slackbot-examples.coffee](https://github.com/michikono/slackbot-tutorial/blob/master/scripts/slackbot-examples.coffee). An accompanying blog post can be found here: http://www.michikono.com/2015/07/10/in-depth-tutorial-on-writing-a-slackbot/
+* An accompanying blog post can be found here: http://www.michikono.com/2015/07/10/in-depth-tutorial-on-writing-a-slackbot/
+* This project contains a more thorough set of example scripts in [slackbot-examples.coffee](https://github.com/michikono/slackbot-tutorial/blob/master/scripts/slackbot-examples.coffee). 
 
 ### Running tutorial Locally
 
